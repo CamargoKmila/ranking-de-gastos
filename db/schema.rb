@@ -10,6 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2021_03_07_051030) do
 
+  create_table "costs", force: :cascade do |t|
+    t.string "txtDescricao"
+    t.string "txtFornecedor"
+    t.string "txtCNPJCPF"
+    t.datetime "datEmissao"
+    t.decimal "vlrLiquido"
+    t.string "urlDocumento"
+    t.integer "deputy_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["deputy_id"], name: "index_costs_on_deputy_id"
+  end
+
+  create_table "deputies", force: :cascade do |t|
+    t.string "txNomeParlamentar"
+    t.integer "ideCadastro"
+    t.string "nuCarteiraParlamentar"
+    t.string "cpf"
+    t.string "sgUF", limit: 2
+    t.string "sgPartido", limit: 255
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "costs", "deputies"
 end
