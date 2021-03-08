@@ -11,25 +11,16 @@
   </head>
 
   <body>
-    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-      <header class="masthead">
-        <div class="inner">
-          <a class="nav-link" href="/">
-            <h3 class="masthead-brand text-white font-weight-bold">CEAP SC</h3>
-          </a>
-          <nav class="nav nav-masthead justify-content-center">
-            <a class="nav-link" href="/">Home</a>
-            <a class="nav-link" href="/deputies">Parlamentares</a>
-          </nav>
-        </div>
-      </header>
-      
-      <div class="container">
-        <main role="main" class="inner cover mt-5">
-          <%= yield %>
-        </main>
-      </div>
-
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+      <h5 class="my-0 mr-md-auto font-weight-normal">CEAP SC</h5>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="/">Home</a>
+        <a class="p-2 text-dark" href="/deputies">Parlamentares</a>
+      </nav>
+    </div>
+        
+    <div class="container mt-5">
+      <%= yield %>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
