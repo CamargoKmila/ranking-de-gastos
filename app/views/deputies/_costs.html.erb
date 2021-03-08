@@ -1,0 +1,27 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Descricao</th>
+      <th scope="col">Fornecedor</th>
+      <th scope="col">CNPJ/CPF</th>
+      <th scope="col">Data</th>
+      <th scope="col">Valor</th>
+      <th scope="col">Doc. Fiscal</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <% @costs.each do |cost| %>
+      <tr>
+        <td><%= cost.txtDescricao %></th>
+        <td><%= cost.txtFornecedor %></td>
+        <td><%= cost.txtCNPJCPF %></td>
+        <td><%= cost.datEmissao.strftime("%D/%M/%Y \n %H:%M") %></td>
+        <td>R$ <%= cost.vlrLiquido %></td>
+        <td>
+          <%= link_to "Ver", cost.urlDocumento, class: "btn btn-sm btn-outline-secondary" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
