@@ -1,0 +1,54 @@
+<div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <% photo_url = "http://www.camara.leg.br/internet/deputado/bandep/#{@deputy.ideCadastro}.jpg" %>
+      <img class="card-img-top" src=<%= photo_url %> alt=<%= @deputy.txNomeParlamentar %>>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h2 class="mb-5"><strong><%= @deputy.txNomeParlamentar %></strong></h2>
+        <p> CPF: <%= @deputy.cpf %></p>
+        <p> Id único do parlamentar: <%= @deputy.ideCadastro %></p>
+        <p> Número da carteira Parlamentar: <%= @deputy.nuCarteiraParlamentar %></p>
+        <p> Sigla do partido: <%= @deputy.sgPartido %></p>
+        <div class="container p-0">
+          <div class="row gx-5">
+            <div class="col">
+              <div class="p-3 border bg-light text-center">
+                <strong>
+                  <p>Soma de despesas </p>
+                  <p class="m-0">R$ <%= @totalCost %></p>
+                </strong>
+              </div>
+            </div>
+            <div class="col">
+              <div class="p-3 border bg-light text-center">
+                <a
+                  class="font-weight-bold"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#multiCollapseExample2"
+                  aria-expanded="false"
+                  aria-controls="multiCollapseExample2"
+                >
+                  <p>Valor da maior despesa </p>
+                  <p class="m-0">R$ <%= @maxCost['vlrLiquido'] %></p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="row col-12 my-3 mx-0 px-0">
+            <div class="collapse multi-collapse w-100" id="multiCollapseExample2">
+              <div class="card card-body">
+                <p><strong>Data:</strong> <%= @maxCost['datEmissao'].strftime("%D/%M/%Y às %H:%M") %></p>
+                <p><strong>Proveniente de:</strong> <%= @maxCost['txtDescricao'] %></p>
+              </div>
+            </div>
+          </div
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "costs" %>
