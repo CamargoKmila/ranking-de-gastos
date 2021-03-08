@@ -50,3 +50,7 @@ Para verificar aplicativo: link_app_heroku
 
 * Filto por categorias de gastos
 
+* Filtro para busca por estado
+
+* Melhorar layout das paginas
+
