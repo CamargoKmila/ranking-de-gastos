@@ -1,17 +1,21 @@
-<div class="row">
-
-  <% @deputies.each do |deputy| %>
-    <% photo_url = "http://www.camara.leg.br/internet/deputado/bandep/#{deputy.ideCadastro}.jpg" %>
-
-    <div class="col-md-4">
-      <div class="card mb-4">
-        <img class="card-img-top" src=<%= photo_url %> alt=<%= deputy.txNomeParlamentar %>>
-        <div class="card-body">
-          <h5 class="card-title"><%= deputy.txNomeParlamentar %></h5>
-          <p class="card-text">Partido: <%= deputy.sgPartido %></p>
-          <a href="#" class="btn btn-primary">+ detalhes</a>
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <% @deputies.each do |deputy| %>
+        <% photo_url = "http://www.camara.leg.br/internet/deputado/bandep/#{deputy.ideCadastro}.jpg" %>
+        <div class="col-md-4">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src=<%= photo_url %> alt=<%= deputy.txNomeParlamentar %>>
+            <div class="card-body">
+              <p class="card-text"><%= deputy.txNomeParlamentar %></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <a href=<%= deputy_path(deputy.id) %> class="btn btn-sm btn-outline-secondary">+ detalhes</a>
+                <small class="text-muted"><%= (deputy.sgPartido) + " / " + (deputy.sgUF) %></small>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
 </div>
