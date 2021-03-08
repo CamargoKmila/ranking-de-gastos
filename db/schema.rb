@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_07_051030) do
+ActiveRecord::Schema.define(version: 2021_03_07_202807) do
 
   create_table "costs", force: :cascade do |t|
     t.string "txtDescricao"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2021_03_07_051030) do
     t.string "sgPartido", limit: 255
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["ideCadastro"], name: "index_deputies_on_ideCadastro"
   end
 
   add_foreign_key "costs", "deputies"
