@@ -1,1 +1,22 @@
-hello world
+<div class="text-center"">
+  <h1 class="cover-heading p-3">Você já ouviu falar da CEAP?</h1>
+  <p class="lead">A Cota para o Exercício da Atividade Parlamentar, custeia as despesas do mandato, como passagens aéreas e conta de celular.</p>
+  <p class="lead">Algumas são reembolsadas, como as com os Correios, e outras são pagas por débito automático, como a compra de passagens. Nos casos de reembolso, os deputados têm três meses para apresentar os recibos. </p>
+  <p class="lead">O valor mensal não utilizado fica acumulado ao longo do ano. Por esse motivo, em alguns meses o valor gasto pode ser maior que a média mensal. (Fonte: Portal da Câmara dos Deputados).</p>
+  <p class="lead pb-5">Através do portal da transparência, nós temos acesso a essas despesas e podemos saber como e onde os políticos estão gastando.</p>
+  <p class="">Clique no botão baixar arquivo e selecione o formato csv .</br>Depois é só adicionar o arquivo baixado no campo importar CSV.</p>
+
+  <p class="lead">
+    <a href="https://dadosabertos.camara.leg.br/swagger/api.html#staticfile" class="btn btn-lg btn-secondary">Baixar arquivo</a>
+  </p>
+</div>
+
+<div class="custom-file w-50 d-flex justify-content-center m-auto text-center">
+  <%= form_with url: upload_csv_path, class: 'upload-form' do |f| %>
+    <p class="error-message"><%= flash[:alert] %></p>
+    <%= f.file_field :data, class: 'custom-file-input' %>
+    <label class="custom-file-label" for="customFile">Importar CSV</label>
+    <%= f.submit 'Upload', class: 'submit-button btn btn-primary mb-2' %>
+  <% end %>
+</div>
+
