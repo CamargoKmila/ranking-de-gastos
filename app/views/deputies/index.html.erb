@@ -1,0 +1,17 @@
+<div class="row">
+
+  <% @deputies.each do |deputy| %>
+    <% photo_url = "http://www.camara.leg.br/internet/deputado/bandep/#{deputy.ideCadastro}.jpg" %>
+
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <img class="card-img-top" src=<%= photo_url %> alt=<%= deputy.txNomeParlamentar %>>
+        <div class="card-body">
+          <h5 class="card-title"><%= deputy.txNomeParlamentar %></h5>
+          <p class="card-text">Partido: <%= deputy.sgPartido %></p>
+          <a href="#" class="btn btn-primary">+ detalhes</a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
