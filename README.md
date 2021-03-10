@@ -1,8 +1,6 @@
 # NOME DO PROJETO
 
-Esta aplicação foi feita usando Ruby on Rails 6 com algumas gems legais!
-
-Para verificar aplicativo: link_app_heroku
+Esta aplicação foi feita usando Ruby on Rails 6 
 
 
 # Etapas para executar este projeto localmente:
@@ -12,9 +10,6 @@ Para verificar aplicativo: link_app_heroku
     * Se você instalou Ruby 2.6.0 usando rvm, pode ser necessário atualizar o Bundler com `gem update --bundler`
 
     * Instale o yarn do npm: `sudo npm install --global yarn`
-
-    * You need to install a system package called  `libpq`something. In Arch Linux is called `libpqxx`, in Ubuntu you may also install `libpqxx-dev`.
-    * Você precisa instalar um pacote de sistema chamado `libpq`algo. No Ubuntu você também pode instalar com: `libpqxx-dev`.
 
 2. Clone e `cd` este projeto.
 
@@ -35,14 +30,14 @@ Para verificar aplicativo: link_app_heroku
 
 * Rails 6
 
-* Rubocop
-
 * Bootstrap
-
-* Heroku
 
 
 ## Meus próximos passos
+
+* Heroku
+
+* Rubocop
 
 * Melhorar arquitetura de dados
 
